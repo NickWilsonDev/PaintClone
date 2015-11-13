@@ -25,26 +25,10 @@ public class PaintFrame extends JFrame {
     GridLayout layout;
 
     /* Menu bar */
-    JMenuBar menuBar;
+    PaintMenu menu;
 
-    /* Menu */
-    JMenu fileMenu;
-    
-    JMenu editMeun;
-
-    JMenu helpMenu;
-
-    /* Menu items */
-    JMenuItem save;
-    JMenuItem open;
-    JMenuItem exit;
-
-    JMenuItem undo;
-    JMenuItem redo;
-    JMenuItem clear;
-
-
-
+    /* Color selection panel */
+    ColorSelectionPanel colorPanel;
 
     /**
      * Constructor will set appropriate frame title, set an appropriate layout
@@ -53,28 +37,21 @@ public class PaintFrame extends JFrame {
      */
     public PaintFrame(String title) {
         this.title = title;
-        setSize(400, 250);
-        setVisible(true);
+
         setTitle(title);
         layout = new GridLayout(2, 2);
 
+        colorPanel = new ColorSelectionPanel();
+
         // menu stuff
-        menuBar = new JMenuBar();
-        fileMenu = new JMenu("File");
-        
-        menuBar.add(fileMenu);
-        save = new JMenuItem("Save", KeyEvent.VK_T);
-        
-        exit = new JMenuItem("Exit", KeyEvent.VK_X);
+        menu = new PaintMenu();
+        setJMenuBar(menu);
 
-        fileMenu.add(save);
-        fileMenu.add(exit);
-
-        setJMenuBar(menuBar);
-
+        add(colorPanel, 0);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
-        setVisible(true);
 
+        setSize(400, 250);
+        setVisible(true);
     }
 }
