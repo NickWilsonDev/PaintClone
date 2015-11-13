@@ -1,4 +1,4 @@
-package edu.wcu.cs.cs263.honors.gui.color;
+//package edu.wcu.cs.cs263.honors.gui.color;
 
 import java.awt.Color;
 

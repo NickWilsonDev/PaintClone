@@ -1,4 +1,4 @@
-package edu.wcu.cs.cs263.honors;
+//package edu.wcu.cs.cs263.honors;
 
 
 /**
@@ -14,7 +14,7 @@ public class MainDriver {
      * It will create a new instance of the PaintFrame class, set the frame's
      * size, and make the frame visible.
      */
-    public static void main(String args) {
+    public static void main(String[] args) {
 
         //todo 
         // make paintframe set its size and make frame visible

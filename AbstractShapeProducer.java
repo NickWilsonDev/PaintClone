@@ -1,5 +1,6 @@
 package edu.wcu.cs.cs263.honors.gui.shape.producer;
 
+import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.util.LinkedList;
 

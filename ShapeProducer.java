@@ -1,5 +1,6 @@
-package edu.wcu.cs.cs263.honors.gui.shape.producer;
+//package edu.wcu.cs.cs263.honors.gui.shape.producer;
 
+import java.awt.Color;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 

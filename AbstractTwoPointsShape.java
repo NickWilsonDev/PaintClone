@@ -1,4 +1,7 @@
-package edu.wcu.cs.cs263.honors.gui.shape;
+//package edu.wcu.cs.cs263.honors.gui.shape;
+
+import java.awt.Color;
+import java.awt.Point;
 
 /**
  * @author Nick Wilson
@@ -25,9 +28,9 @@ abstract class AbstractTwoPointsShape extends AbstractShape {
      *  end   - Point, ending point of the shape.
      */
     public AbstractTwoPointsShape (Color color, Point start, Point end) {
-        this.color = color;
-        this.start = start;
-        this.end   = end;
+        super(color);
+        start = start;
+        end   = end;
     }
 
     /**
