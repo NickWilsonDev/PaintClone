@@ -2,7 +2,10 @@
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.JColorChooser;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -36,14 +39,58 @@ public class ColorSelectionPanel extends JPanel {
     /* Current Color */
     Color currentColor;
 
+    /* JPanel for color preview */
+    JPanel colorPreview;
+    //JLabel colorPreview;
+
     public ColorSelectionPanel() {
         super(new BorderLayout());
 
-        colorChooser = new JColorChooser();
-        
+        colorChooser = new JColorChooser(Color.white);
+        //colorPreview = new JLabel("Color");
+        colorChooser.getSelectionModel().addChangeListener(
+            new ChangeListener() {
+                public void stateChanged(ChangeEvent e) {
+                    currentColor = colorChooser.getColor();
+                    colorChooser.updateUI();
+                }
+            });
 
-        colorChooser.setPreviewPanel(new JPanel());
+           
+        colorChooser.setPreviewPanel(colorPreview);
+        //add(colorPreview);
 
         add(colorChooser, BorderLayout.PAGE_END);
+    }
+
+    protected void removeColorChangeListener(ColorChangeListener ccl) {
+        //todo remove ccl from list of ccls
+    }
+
+    /**
+     * This method will add the specified ColorChangeListener to the List of
+     * ColorChangeListeners maintained by this class.
+     *
+     * @param ccl - a ColorChangeListener that will be added to the list
+     */
+    protected void addColorChangeListener(ColorChangeListener ccl) {
+        // todo
+    }
+
+    /**
+     * This method returns the currently selected color.
+     */
+    protected Color getSelectedColor() {
+        return colorChooser.getColor();
+    }
+
+    /**
+     * This protected method loops over all attached ColorChangeListeners and
+     * notifies them of the change in color.
+     *
+     * @param color - type Color that has been changed
+     */
+    protected void notifyColorChange(Color color) {
+        //todo
     }
 }
