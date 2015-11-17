@@ -41,23 +41,26 @@ public class ColorSelectionPanel extends JPanel {
 
     /* JPanel for color preview */
     JPanel colorPreview;
-    //JLabel colorPreview;
 
     public ColorSelectionPanel() {
         super(new BorderLayout());
-
+        //colorPreview = new JPanel();
         colorChooser = new JColorChooser(Color.white);
-        //colorPreview = new JLabel("Color");
         colorChooser.getSelectionModel().addChangeListener(
             new ChangeListener() {
                 public void stateChanged(ChangeEvent e) {
                     currentColor = colorChooser.getColor();
-                    colorChooser.updateUI();
+                    System.out.println(currentColor.toString());
+                    //colorPreview.set
+                    //colorChooser.setPreviewPanel(colorPreview);
+
+        colorChooser.setPreviewPanel(colorPreview);
+                    //colorPreview.updateUI();
                 }
             });
 
            
-        colorChooser.setPreviewPanel(colorPreview);
+
         //add(colorPreview);
 
         add(colorChooser, BorderLayout.PAGE_END);
